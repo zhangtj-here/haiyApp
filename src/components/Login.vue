@@ -3,15 +3,15 @@
     <img class="logo" src="@/assets/logocnodc.png">
     <el-row id="formRow">
       <el-col :span="24">
-        <el-form ref="form" :model="form" label-width="80px">
-          <el-form-item label="用户名">
+        <el-form ref="form" :model="form" >
+          <el-form-item label="">
             <el-input
               placeholder="请输入用户名"
               v-model="form.name"
               clearable>
             </el-input>
           </el-form-item>
-          <el-form-item label="密码">
+          <el-form-item label="">
             <el-input
               placeholder="请输入密码"
               type="password"
@@ -19,8 +19,7 @@
               clearable>
             </el-input>
           </el-form-item>
-          <el-button type="primary" plain>登录</el-button>
-          <el-button type="warning" plain>登录</el-button>
+          <el-button type="primary" @click="goHome" id="login">登录</el-button>
         </el-form>
       </el-col>
     </el-row>
@@ -37,6 +36,13 @@ export default {
         name: '',
         password: ''
       }
+    }
+  },
+  methods: {
+    goHome () {
+      const self = this
+      // alert('invitaue user or password')
+      self.$router.push('/home')
     }
   }
 }
@@ -58,30 +64,7 @@ export default {
     padding: 0 10px;
     margin-top: 20px;
   }
-  .el-row {
-    margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  .el-col {
-    border-radius: 4px;
-  }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
+  #login{
+    width: 100%;
   }
 </style>
