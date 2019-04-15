@@ -1,5 +1,14 @@
 <template>
-  <div>{{title}}</div>
+  <div>
+    <mt-header title="oa移动办公">
+      <router-link to="/" slot="left">
+        <!--<mt-button icon="back">返回</mt-button>-->
+      </router-link>
+      <!--<mt-button icon="more" slot="right"></mt-button>-->
+    </mt-header>
+    <div ></div>
+
+  </div>
 </template>
 
 <script>
@@ -12,8 +21,5 @@ export default {
 </script>
 
 <style scoped>
-div{
-  width: 20rem;
-  background: red;
-}
+
 </style>
