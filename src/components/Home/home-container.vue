@@ -1,18 +1,18 @@
 <template>
   <div>
-    <mt-header title="oa移动办公">
-      <router-link to="/" slot="left">
-      </router-link>
-    </mt-header>
     <div id="topLink">
-      <div>
-        <img src="@/assets/logo.png" alt="">
-        111
+      <div @click="goAmap">
+        <!-- <router-link to="/amap"> -->
+          <img src="@/assets/logo.png" alt="">
+          map
+        <!-- <router-link> -->
       </div>
-      <div>
-        <img src="@/assets/logo.png" alt="">
-        222
-      </div>
+      <router-link to="/login">
+        <div>
+            <img src="@/assets/logo.png" alt="">
+            222
+        </div>
+      </router-link>
       <div>
         <img src="@/assets/logo.png" alt="">
         222
@@ -35,6 +35,11 @@ export default {
   name: 'home-container',
   props: {
     title: String
+  },
+  methods: {
+    goAmap () {
+      this.$router.push('/amap')
+    }
   }
 }
 </script>
